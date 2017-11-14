@@ -1,7 +1,5 @@
 server:
   port: 8080
-girl:
-  cupsize: F
-  age: 20
-
-content: "cusize: ${cupsize},age: ${age}"
+spring:
+  jpa:
+    show-sql: true
