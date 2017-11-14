@@ -1,0 +1,27 @@
+# 可以被 git 忽略的文件列表
+*.iml
+*.tmp
+*.class
+
+.classpath
+.project
+.settings
+.tomcatplugin
+
+.idea/
+.externalToolBuilders/
+
+src/main/webapp/META-INF/MANIFEST.MF
+src/main/resources/application-local.properties
+
+_out/
+_tmp/
+logs/
+work/
+build/
+wardir/
+target/
+classes/
+downloadFile/
+uploadFile/
+src/test/java/
