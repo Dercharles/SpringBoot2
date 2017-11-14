@@ -1,15 +1,6 @@
-package entity;
+package com.yang.entityVo;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-/**
- * Created by yangp on 2017/11/14.
- */
-@Entity
-@Table(name="c_user")
-public class userEntity {
-
+public class userVo {
     private Long id;
     private String name;
     private Long age;
