@@ -3,6 +3,7 @@ package com.yang.utils;
 import com.yang.user.entity.Result;
 
 /**
+ * 返回外层处理
  * Created by yangp on 2017/11/15.
  */
 public class Resultutil {

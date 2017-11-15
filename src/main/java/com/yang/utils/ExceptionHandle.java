@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 /**
+ * 自定义异常处理
  * Created by yangp on 2017/11/15.
  */
 @ControllerAdvice

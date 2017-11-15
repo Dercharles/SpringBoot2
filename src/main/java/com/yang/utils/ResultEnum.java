@@ -1,6 +1,7 @@
 package com.yang.utils;
 
 /**
+ * 统一的返回码处理
  * Created by yangp on 2017/11/15.
  */
 public enum ResultEnum {

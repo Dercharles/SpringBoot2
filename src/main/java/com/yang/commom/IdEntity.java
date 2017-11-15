@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
+ * 统一ID生成器
  * Created by yangp on 2017/11/15.
  */
 @MappedSuperclass

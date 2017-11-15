@@ -11,6 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * aop切面处理
  * Created by yangp on 2017/11/15.
  */
 @Aspect

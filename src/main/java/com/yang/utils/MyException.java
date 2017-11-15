@@ -1,6 +1,7 @@
 package com.yang.utils;
 
 /**
+ * 返回码code处理
  * Created by yangp on 2017/11/15.
  */
 public class MyException extends RuntimeException {
