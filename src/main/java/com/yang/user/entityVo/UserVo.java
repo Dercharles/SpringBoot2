@@ -1,6 +1,6 @@
-package com.yang.entityVo;
+package com.yang.user.entityVo;
 
-public class userVo {
+public class UserVo {
     private Long id;
     private String name;
     private Long age;
