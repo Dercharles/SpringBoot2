@@ -2,6 +2,7 @@ package com.yang.user.service;
 
 import com.yang.user.dao.UserDao;
 import com.yang.user.entity.UserEntity;
+import com.yang.utils.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,14 @@ public class UserService {
 
     public void userSave(UserEntity userEntity) {
         userDao.save(userEntity);
+    }
+
+    /**
+     * 查询
+     * @param id
+     * @return
+     */
+    public UserEntity findOne(Long id){
+        return userDao.findOne(id);
     }
 }
