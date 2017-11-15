@@ -39,4 +39,13 @@ public class UserEntity extends IdEntity{
     public void setCupsize(String cupsize) {
         this.cupsize = cupsize;
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", cupsize='" + cupsize + '\'' +
+                '}';
+    }
 }
