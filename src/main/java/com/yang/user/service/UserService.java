@@ -26,8 +26,8 @@ public class UserService {
         userDao.delete(id);
     }
 
-    public void userSave(UserEntity userEntity) {
-        userDao.save(userEntity);
+    public UserEntity userSave(UserEntity userEntity) {
+       return userDao.save(userEntity);
     }
 
     /**

@@ -25,14 +25,17 @@ public class UserController {
     }
     @PostMapping(value = "/save")
     @ResponseBody
-    public String save(@RequestBody UserEntity userEntity){
-        userService.userSave(userEntity);
-        return "200";
+    public UserEntity save(@ModelAttribute UserEntity userEntity){
+        return userService.userSave(userEntity);
     }
     @GetMapping(value = "/delete")
-    public String delete(@RequestParam(value = "id")Long id){
+    public String delete(@ModelAttribute(value = "id")Long id){
         userService.delete(id);
         return "200";
+    }
+    @PostMapping(value = "/update/{id}")
+    public UserEntity update(@ModelAttribute("id") UserEntity userEntity){
+        return userService.userSave(userEntity);
     }
 
 }
