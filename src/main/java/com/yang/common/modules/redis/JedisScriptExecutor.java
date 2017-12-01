@@ -6,6 +6,7 @@
 package com.yang.common.modules.redis;
 
 
+import com.yang.common.modules.redis.JedisTemplate.JedisAction;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
@@ -13,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import redis.clients.jedis.Jedis;
-import com.yang.common.modules.redis.JedisTemplate.JedisAction;
 import redis.clients.jedis.exceptions.JedisDataException;
 import redis.clients.util.Pool;
 

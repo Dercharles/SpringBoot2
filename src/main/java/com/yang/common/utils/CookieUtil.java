@@ -1,33 +1,29 @@
 package com.yang.common.utils;
 
 
-import com.yang.common.base.controller.BaseController;
-import com.yang.common.modules.validate.Validator;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.net.URLEncoder;
 
 public class CookieUtil {
 //	private static String[] cookieKeys = new String[]{"loginUserId","userId","userName","loginUserName","roleName","sid","userImgUrl","lastLoginName","loginBgUrl","logoUrl","nsid","nuid","nuname","nuprofilePhoto","webBgUrl"};
 	
 	public static void saveUserInfo(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		String userName = BaseController.getCurrentUserName();
-		String loginUserName = BaseController.getLoginUserName();
-		Long userId = BaseController.getCurrentUserId();
-		Long loginUserId = BaseController.getLoginUserId();
-		String roleName = BaseController.getCurrentRole();
+//		String userName = BaseController.getCurrentUserName();
+//		String loginUserName = BaseController.getLoginUserName();
+//		Long userId = BaseController.getCurrentUserId();
+//		Long loginUserId = BaseController.getLoginUserId();
+//		String roleName = BaseController.getCurrentRole();
 		String sessionId = request.getSession().getId();
-		String userImgUrl = BaseController.getUserImgUrl();
+//		String userImgUrl = BaseController.getUserImgUrl();
 		
-		saveCookie("loginUserId",loginUserId.toString(),response,request);
-		saveCookie("userId", Validator.isNull(userId) ? loginUserId.toString() :userId.toString(),response,request);
-		saveCookie("userName", Validator.isNull(userName)? "" : EscapeUnescape.escape(userName),response,request);
-		saveCookie("loginUserName", Validator.isNull(loginUserName) ? "" : EscapeUnescape.escape(loginUserName),response,request);
-		saveCookie("roleName", Validator.isNull(roleName) ? "" : EscapeUnescape.escape(roleName),response,request);
+//		saveCookie("loginUserId",loginUserId.toString(),response,request);
+//		saveCookie("userId", Validator.isNull(userId) ? loginUserId.toString() :userId.toString(),response,request);
+//		saveCookie("userName", Validator.isNull(userName)? "" : EscapeUnescape.escape(userName),response,request);
+//		saveCookie("loginUserName", Validator.isNull(loginUserName) ? "" : EscapeUnescape.escape(loginUserName),response,request);
+//		saveCookie("roleName", Validator.isNull(roleName) ? "" : EscapeUnescape.escape(roleName),response,request);
 		saveCookie("sid", sessionId, response,request);
-		saveCookie("userImgUrl", Validator.isNull(userImgUrl) ? "" : URLEncoder.encode(userImgUrl,"utf-8"),response,request);
+//		saveCookie("userImgUrl", Validator.isNull(userImgUrl) ? "" : URLEncoder.encode(userImgUrl,"utf-8"),response,request);
 	}
 	
 	public static void saveCookie(String key, String value, HttpServletResponse response, HttpServletRequest request){

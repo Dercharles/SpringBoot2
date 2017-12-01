@@ -1,10 +1,8 @@
 package com.yang.common.modules;
 
-import com.visionet.letsdesk.app.base.controller.BaseController;
-import com.visionet.letsdesk.app.common.utils.SpringContextUtil;
+import com.yang.common.utils.SpringContextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +12,13 @@ import java.util.Locale;
 public class MessageSourceHelper {
 	private static Logger log = LoggerFactory.getLogger(MessageSourceHelper.class);
 	
-	@Autowired
+	//@Autowired
 	private ReloadableResourceBundleMessageSource messageSource;
 
 	public String getMessage(String code, Object[] args, String defaultMessage, Locale locale) {
-		if(locale == null){
-            locale = new Locale(BaseController.getLocale());
-		}
+//		if(locale == null){
+//            locale = new Locale(BaseController.getLocale());
+//		}
 //		System.out.println("---locale4="+locale.getLanguage());
 		String msg = messageSource.getMessage(code, args, defaultMessage,locale);
 		
@@ -32,7 +30,7 @@ public class MessageSourceHelper {
 	}
 	
 	public static String GetMessages(String code) {
-		String msg = ((MessageSourceHelper)SpringContextUtil.getBean("messageSourceHelper")).getMessage(code);
+		String msg = ((MessageSourceHelper) SpringContextUtil.getBean("messageSourceHelper")).getMessage(code);
 		return msg != null ? msg.trim() : msg;
 	}
 

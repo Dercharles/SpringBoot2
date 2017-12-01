@@ -1,7 +1,6 @@
 package com.yang.utils.customexception;
 
 import com.yang.utils.returncode.Result;
-
 import com.yang.utils.returncode.Resultutil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

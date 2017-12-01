@@ -4,7 +4,6 @@ import com.yang.user.dao.RoleDao;
 import com.yang.user.dao.UserDao;
 import com.yang.user.entity.RoleEntity;
 import com.yang.user.entity.UserEntity;
-import org.hibernate.Session;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,9 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -35,9 +31,12 @@ public class UserControllerTest {
 
 
     @Test
-    @Ignore
+    //@Ignore
     public void save() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.post("/user/save").param("name","lisiu"))
+        mockMvc.perform(MockMvcRequestBuilders.post("/user/save")
+                .param("name","lisiu")
+                .param("loginName","yangpeng")
+                .param("password","123456"))
                 .andExpect(status().isOk())
                 .andDo(print());
     }
@@ -57,6 +56,7 @@ public class UserControllerTest {
     }
 
     @Test
+    @Ignore
     public void testCreate(){
         UserEntity u1 = userDao.findOne(3l);
         UserEntity u2 = userDao.findOne(2l);

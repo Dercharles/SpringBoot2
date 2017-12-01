@@ -1,7 +1,5 @@
 package com.yang.utils.returncode;
 
-import com.yang.utils.returncode.Result;
-
 /**
  * 返回外层处理
  * Created by yangp on 2017/11/15.

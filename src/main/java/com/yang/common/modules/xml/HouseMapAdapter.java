@@ -1,7 +1,7 @@
 package com.yang.common.modules.xml;
 
 import com.google.common.collect.Maps;
-import com.visionet.letsdesk.app.common.modules.xml.HouseMapAdapter.HouseMap.HouseEntry;
+import com.yang.common.modules.xml.HouseMapAdapter.HouseMap.HouseEntry;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

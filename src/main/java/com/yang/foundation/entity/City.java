@@ -1,8 +1,6 @@
 package com.yang.foundation.entity;
 
 import com.yang.common.base.entity.IdEntity;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,7 +10,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "c_city")
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class City extends IdEntity {
 
     private String cityName;

@@ -1,8 +1,8 @@
 package com.yang.foundation.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.visionet.letsdesk.app.base.entity.JsonDateSerializer;
-import com.visionet.letsdesk.app.base.vo.BaseVo;
+import com.yang.common.base.entity.JsonDateSerializer;
+import com.yang.common.base.vo.BaseVo;
 
 import java.util.Date;
 

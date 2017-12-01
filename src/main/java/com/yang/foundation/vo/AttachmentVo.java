@@ -1,9 +1,9 @@
 package com.yang.foundation.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.visionet.letsdesk.app.common.modules.props.PropsKeys;
-import com.visionet.letsdesk.app.common.modules.props.PropsUtil;
-import com.visionet.letsdesk.app.common.modules.string.StringPool;
+import com.yang.common.modules.props.PropsKeys;
+import com.yang.common.modules.props.PropsUtil;
+import com.yang.common.modules.string.StringPool;
 
 public class AttachmentVo {
 

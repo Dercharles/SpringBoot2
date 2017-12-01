@@ -6,16 +6,16 @@
 package com.yang.common.modules.redis.elector;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import redis.clients.jedis.Jedis;
-import redis.clients.util.Pool;
-
 import com.yang.common.modules.redis.JedisTemplate;
 import com.yang.common.modules.redis.JedisTemplate.JedisActionNoResult;
 import com.yang.common.modules.redis.JedisUtils;
 import com.yang.common.modules.utils.Threads;
 import com.yang.common.modules.utils.Threads.WrapExceptionRunnable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import redis.clients.jedis.Jedis;
+import redis.clients.util.Pool;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.SecureRandom;

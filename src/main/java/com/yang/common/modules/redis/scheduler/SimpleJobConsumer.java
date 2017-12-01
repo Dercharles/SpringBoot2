@@ -5,9 +5,9 @@
  *******************************************************************************/
 package com.yang.common.modules.redis.scheduler;
 
-import com.visionet.letsdesk.app.common.modules.redis.JedisTemplate;
-import com.visionet.letsdesk.app.common.modules.redis.JedisTemplate.JedisAction;
-import com.visionet.letsdesk.app.common.modules.utils.Threads;
+import com.yang.common.modules.redis.JedisTemplate;
+import com.yang.common.modules.redis.JedisTemplate.JedisAction;
+import com.yang.common.modules.utils.Threads;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;

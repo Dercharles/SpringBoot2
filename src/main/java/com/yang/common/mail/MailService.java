@@ -1,7 +1,7 @@
 package com.yang.common.mail;
 
-import com.visionet.letsdesk.app.common.modules.utils.Collections3;
-import com.visionet.letsdesk.app.foundation.vo.AttachmentVo;
+import com.yang.common.modules.utils.Collections3;
+import com.yang.foundation.vo.AttachmentVo;
 import org.slf4j.Logger;
 
 import javax.mail.Session;

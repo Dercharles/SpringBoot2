@@ -1,8 +1,9 @@
 package com.yang.common.alipay.util;
 
-import com.visionet.letsdesk.app.alipay.config.AlipayConfig;
-import com.visionet.letsdesk.app.alipay.sign.RSA;
-import com.visionet.letsdesk.app.common.modules.props.PropsKeys;
+
+import com.yang.common.alipay.config.AlipayConfig;
+import com.yang.common.alipay.sign.RSA;
+import com.yang.common.modules.props.PropsKeys;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

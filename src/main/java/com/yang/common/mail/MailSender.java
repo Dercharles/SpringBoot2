@@ -1,11 +1,10 @@
 package com.yang.common.mail;
 
 import com.sun.mail.util.MailSSLSocketFactory;
-import com.visionet.letsdesk.app.channel.service.mail.MailProcessService;
-import com.visionet.letsdesk.app.common.modules.props.PropsKeys;
-import com.visionet.letsdesk.app.common.modules.props.PropsUtil;
-import com.visionet.letsdesk.app.common.modules.validate.Validator;
-import com.visionet.letsdesk.app.foundation.vo.AttachmentVo;
+import com.yang.common.modules.props.PropsKeys;
+import com.yang.common.modules.props.PropsUtil;
+import com.yang.common.modules.validate.Validator;
+import com.yang.foundation.vo.AttachmentVo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.slf4j.Logger;
@@ -237,7 +236,7 @@ public class MailSender extends MailService{
 							if(vo.getRelativePath().startsWith(PropsUtil.getProperty(PropsKeys.UPLOAD_FILE_DOWNLOAD_PATH))){
 								vo.setRelativePath(vo.getRelativePath().replaceAll(PropsUtil.getProperty(PropsKeys.UPLOAD_FILE_DOWNLOAD_PATH),""));
 							}
-							path = MailProcessService.DirPath + vo.getRelativePath();
+							path = "e://";
 						}else {
 							continue;
 						}
@@ -263,7 +262,7 @@ public class MailSender extends MailService{
 							if(vo.getRelativePath().startsWith(PropsUtil.getProperty(PropsKeys.UPLOAD_FILE_DOWNLOAD_PATH))){
 								vo.setRelativePath(vo.getRelativePath().replaceAll(PropsUtil.getProperty(PropsKeys.UPLOAD_FILE_DOWNLOAD_PATH),""));
 							}
-							path = MailProcessService.DirPath + vo.getRelativePath();
+							path = "e://";
 						}else {
 							continue;
 						}

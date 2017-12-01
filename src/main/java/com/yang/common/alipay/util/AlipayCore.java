@@ -1,6 +1,6 @@
 package com.yang.common.alipay.util;
 
-import com.visionet.letsdesk.app.alipay.config.AlipayConfig;
+import com.yang.common.alipay.config.AlipayConfig;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.httpclient.methods.multipart.FilePartSource;
 import org.apache.commons.httpclient.methods.multipart.PartSource;

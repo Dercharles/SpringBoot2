@@ -1,10 +1,10 @@
 package com.yang.common.modules;
 
 import com.google.common.collect.Lists;
-import com.visionet.letsdesk.app.common.file.FileUtil;
-import com.visionet.letsdesk.app.common.modules.props.PropsKeys;
-import com.visionet.letsdesk.app.common.modules.props.PropsUtil;
-import com.visionet.letsdesk.app.common.utils.UploadUtil;
+import com.yang.common.file.FileUtil;
+import com.yang.common.modules.props.PropsKeys;
+import com.yang.common.modules.props.PropsUtil;
+import com.yang.common.utils.UploadUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

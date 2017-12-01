@@ -1,6 +1,6 @@
 package com.yang.common.utils;
 
-import com.visionet.letsdesk.app.common.modules.validate.Validator;
+import com.yang.common.modules.validate.Validator;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;

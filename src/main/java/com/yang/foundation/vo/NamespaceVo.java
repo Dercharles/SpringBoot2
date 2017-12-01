@@ -1,6 +1,7 @@
 package com.yang.foundation.vo;
 
-import com.visionet.letsdesk.app.base.vo.BaseVo;
+
+import com.yang.common.base.vo.BaseVo;
 
 import java.util.Date;
 

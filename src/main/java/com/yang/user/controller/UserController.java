@@ -29,6 +29,7 @@ public class UserController extends BaseController {
     @PostMapping(value = "/save")
     @ResponseBody
     public ResponseEntity<?> save(@ModelAttribute UserEntity userEntity){
+        userEntity = null;
         userEntity =  userService.userSave(userEntity);
         return new ResponseEntity<UserEntity>(userEntity, HttpStatus.OK);
     }

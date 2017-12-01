@@ -3,10 +3,10 @@ package com.yang.common.mail;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.visionet.letsdesk.app.channel.service.mail.MailProcessService;
-import com.visionet.letsdesk.app.common.file.FileUtil;
-import com.visionet.letsdesk.app.common.modules.validate.Validator;
-import com.visionet.letsdesk.app.foundation.vo.AttachmentVo;
+import com.yang.common.file.FileUtil;
+import com.yang.common.modules.utils.Encodes;
+import com.yang.common.modules.validate.Validator;
+import com.yang.foundation.vo.AttachmentVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -199,7 +199,7 @@ public class MailRecipient extends MailService {
 			return null;
 		} else {
 			try {
-				String s1 = new String(Base64.decodeBase64(str), "gb2312");
+				String s1 = new String(Encodes.decodeBase64(str), "gb2312");
 				return s1;
 			} catch (UnsupportedEncodingException var3) {
 				return str;
@@ -268,7 +268,7 @@ public class MailRecipient extends MailService {
 				AttachmentVo attachmentVo = new AttachmentVo();
 				attachmentVo.setRelativePath(resourceDirPath + File.separatorChar + contentId);
 				attachmentVo.setUuidName(contentId);
-				attachmentVo.setFullPath(MailProcessService.DirPath + attachmentVo.getRelativePath());
+				attachmentVo.setFullPath("e://"+ attachmentVo.getRelativePath());
 				attachmentVo.setRealName(fileName);
 				mailBean.getInnerResources().add(attachmentVo);
 
@@ -281,7 +281,7 @@ public class MailRecipient extends MailService {
 				AttachmentVo attachmentVo = new AttachmentVo();
 				attachmentVo.setRelativePath(resourceDirPath + File.separatorChar + contentId);
 				attachmentVo.setUuidName(contentId);
-				attachmentVo.setFullPath(MailProcessService.DirPath + attachmentVo.getRelativePath());
+				attachmentVo.setFullPath("e://"+ attachmentVo.getRelativePath());
 				attachmentVo.setRealName(fileName);
 				mailBean.getAttachments().add(attachmentVo);
 
@@ -290,7 +290,7 @@ public class MailRecipient extends MailService {
 			}
 //			System.out.println("--path="+path);
 
-			final String folder = MailProcessService.DirPath + resourceDirPath;
+			final String folder = "e://"+ resourceDirPath;
 //			System.out.println("--folder="+folder);
 			if(downloadFile&&path!=null){
 				if(!FileUtil.exists(folder)) {
@@ -315,7 +315,7 @@ public class MailRecipient extends MailService {
 		if(Validator.isNotNull(fileType)){
 			fileName+="."+fileType;
 		}
-		final String folder = MailProcessService.DirPath + resourceDirPath;
+		final String folder = "e://"+ resourceDirPath;
 		if(downloadFile && !FileUtil.exists(folder)){
 			FileUtil.mkdirs(folder);
 		}
