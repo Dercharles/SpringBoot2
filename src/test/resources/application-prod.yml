@@ -7,5 +7,5 @@ spring:
     username: root
     password: dbadmin
   jpa:
-    show-sql: false
+    show-sql: true
     database-platform: org.hibernate.dialect.MySQL5Dialect

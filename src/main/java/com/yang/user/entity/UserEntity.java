@@ -2,19 +2,23 @@ package com.yang.user.entity;
 
 import com.yang.commom.IdEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yangp on 2017/11/14.
  */
 @Entity
-@Table(name = "c_user")
+@Table(name = "user")
 public class UserEntity extends IdEntity{
 
     private String name;
     private Long age;
     private String cupsize;
+
+    @Transient
+    private Set<RoleEntity> roleEntities = new HashSet<>();
 
     public String getName() {
         return name;
@@ -47,5 +51,15 @@ public class UserEntity extends IdEntity{
                 ", age=" + age +
                 ", cupsize='" + cupsize + '\'' +
                 '}';
+    }
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role",inverseJoinColumns = {@JoinColumn(name = "role_id")}, joinColumns = {@JoinColumn(name = "user_id")})
+    public Set<RoleEntity> getRoleEntities() {
+        return roleEntities;
+    }
+
+    public void setRoleEntities(Set<RoleEntity> roleEntities) {
+        this.roleEntities = roleEntities;
     }
 }
