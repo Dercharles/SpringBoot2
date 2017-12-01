@@ -1,8 +1,10 @@
 package com.yang.user.service;
 
+import com.yang.common.base.service.BaseService;
+import com.yang.common.constant.BusinessStatus;
+import com.yang.common.modules.validate.Validator;
 import com.yang.user.dao.UserDao;
 import com.yang.user.entity.UserEntity;
-import com.yang.utils.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ import java.util.List;
  * Created by yangp on 2017/11/15.
  */
 @Service
-public class UserService {
+public class UserService extends BaseService {
 
     @Autowired
     private UserDao userDao;
@@ -27,6 +29,9 @@ public class UserService {
     }
 
     public UserEntity userSave(UserEntity userEntity) {
+        if (Validator.isNotNull(userEntity)){
+            throwException(BusinessStatus.ERROR,"userEntity is null");
+        }
        return userDao.save(userEntity);
     }
 

@@ -58,24 +58,21 @@ public class UserControllerTest {
 
     @Test
     public void testCreate(){
-        UserEntity u1 = userDao.findOne(1l);
+        UserEntity u1 = userDao.findOne(3l);
         UserEntity u2 = userDao.findOne(2l);
 
         RoleEntity r1 = roleDao.findOne(1l);
         RoleEntity r2 = roleDao.findOne(1l);
-        Set<RoleEntity> ro1 = new HashSet<>();
-        ro1.add(r1);
-        ro1.add(r2);
-        Set<RoleEntity> ro2 = new HashSet<>();
-        ro2.add(r2);
+        RoleEntity r3 = roleDao.findOne(2l);
 
-        u1.setRoleEntities(ro1);
-        u2.setRoleEntities(ro2);
+
+        u1.getRoleEntities().add(r1);
+        u2.getRoleEntities().add(r2);
+        u1.getRoleEntities().add(r2);
 
         userDao.save(u1);
         userDao.save(u2);
-        roleDao.save(r1);
-        roleDao.save(r2);
+
     }
 
 }

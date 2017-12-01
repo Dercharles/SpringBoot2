@@ -1,6 +1,6 @@
 package com.yang.user.entity;
 
-import com.yang.commom.IdEntity;
+import com.yang.common.base.entity.IdEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,14 +10,16 @@ import java.util.Set;
  * Created by yangp on 2017/11/14.
  */
 @Entity
-@Table(name = "user")
+@Table(name = "c_user")
 public class UserEntity extends IdEntity{
 
-    private String name;
-    private Long age;
-    private String cupsize;
+    public UserEntity() {
+    }
 
-    @Transient
+    private String name;
+    private String loginName;
+    private String password;
+
     private Set<RoleEntity> roleEntities = new HashSet<>();
 
     public String getName() {
@@ -28,33 +30,43 @@ public class UserEntity extends IdEntity{
         this.name = name;
     }
 
-    public Long getAge() {
-        return age;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setAge(Long age) {
-        this.age = age;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
-    public String getCupsize() {
-        return cupsize;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCupsize(String cupsize) {
-        this.cupsize = cupsize;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "UserEntity{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
-                ", cupsize='" + cupsize + '\'' +
+                ", loginName='" + loginName + '\'' +
+                ", password='" + password + '\'' +
+                ", roleEntities=" + roleEntities +
+                ", id=" + id +
                 '}';
     }
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role",inverseJoinColumns = {@JoinColumn(name = "role_id")}, joinColumns = {@JoinColumn(name = "user_id")})
+
+    public UserEntity(String name, String loginName, String password, Set<RoleEntity> roleEntities) {
+        this.name = name;
+        this.loginName = loginName;
+        this.password = password;
+        this.roleEntities = roleEntities;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "c_user_role",inverseJoinColumns = {@JoinColumn(name = "role_id")}, joinColumns = {@JoinColumn(name = "user_id")})
     public Set<RoleEntity> getRoleEntities() {
         return roleEntities;
     }
