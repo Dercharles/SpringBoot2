@@ -66,7 +66,7 @@ public class UserEntity extends IdEntity{
     }
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "c_user_role",inverseJoinColumns = {@JoinColumn(name = "role_id")}, joinColumns = {@JoinColumn(name = "user_id")})
+    @JoinTable(name = "c_user_role", joinColumns = {@JoinColumn(name = "user_id")} , inverseJoinColumns = {@JoinColumn(name = "role_id")})
     public Set<RoleEntity> getRoleEntities() {
         return roleEntities;
     }

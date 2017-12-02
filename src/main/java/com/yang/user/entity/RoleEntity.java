@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.yang.common.base.entity.IdEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -24,16 +25,8 @@ public class RoleEntity extends IdEntity{
     public RoleEntity() {
     }
 
-    public RoleEntity(Long id,String name){
-        this.id=id;
-        this.name=name;
-    }
 
-
-    public RoleEntity(Long id) {
-        this.id = id;
-    }
-
+    @NotBlank
     public String getName() {
         return name;
     }

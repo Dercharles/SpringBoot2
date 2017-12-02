@@ -3,7 +3,9 @@ package com.yang.user.service;
 import com.yang.common.base.service.BaseService;
 import com.yang.common.constant.BusinessStatus;
 import com.yang.common.modules.validate.Validator;
-import com.yang.user.dao.UserDao;
+import com.yang.user.dao.IRoleDao;
+import com.yang.user.dao.IUserDao;
+import com.yang.user.entity.RoleEntity;
 import com.yang.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,22 +19,33 @@ import java.util.List;
 public class UserService extends BaseService {
 
     @Autowired
-    private UserDao userDao;
+    private IUserDao IUserDao;
+    @Autowired
+    private IRoleDao iRoleDao;
 
 
     public List<UserEntity> finlist() {
-        return userDao.findAll();
+        return (List<UserEntity>) IUserDao.findAll();
     }
 
     public void delete(Long id) {
-        userDao.delete(id);
+        IUserDao.delete(id);
     }
 
     public UserEntity userSave(UserEntity userEntity) {
-        if (Validator.isNotNull(userEntity)){
+        if (Validator.isNull(userEntity)){
             throwException(BusinessStatus.ERROR,"userEntity is null");
         }
-       return userDao.save(userEntity);
+       return IUserDao.save(userEntity);
+    }
+
+    public UserEntity userRoleSave(UserEntity userEntity,Long roleId) {
+        RoleEntity roleEntity = iRoleDao.findOne(roleId);
+        if (Validator.isNull(roleEntity)){
+            throwException(BusinessStatus.ERROR,"userEntity is null");
+        }
+        userEntity.getRoleEntities().add(roleEntity);
+        return IUserDao.save(userEntity);
     }
 
     /**
@@ -41,6 +54,6 @@ public class UserService extends BaseService {
      * @return
      */
     public UserEntity findOne(Long id){
-        return userDao.findOne(id);
+        return IUserDao.findOne(id);
     }
 }
