@@ -1,27 +1,25 @@
-# 可以被 git 忽略的文件列表
-*.iml
-*.tmp
-*.class
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
 .settings
-.tomcatplugin
+.springBeans
+.sts4-cache
 
-.idea/
-.externalToolBuilders/
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
-src/main/webapp/META-INF/MANIFEST.MF
-src/main/resources/application-local.properties
-
-_out/
-_tmp/
-logs/
-work/
+### NetBeans ###
+nbproject/private/
 build/
-wardir/
-target/
-classes/
-downloadFile/
-uploadFile/
-
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

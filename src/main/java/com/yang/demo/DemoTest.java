@@ -26,9 +26,6 @@ public class DemoTest {
         int s1 = 1;
         int s2 = a1.length-1;
         int s3 = (s1+s2)/2;
-        while (){
-
-        }
         return null;
     }
 }
