@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.yang.common.alipay.config.AlipayConfig"%>
-<%@ page import="com.yang.common.alipay.util.AlipaySubmit"%>
+<%@ page import="com.example.springboot2.yang.common.alipay.config.AlipayConfig"%>
+<%@ page import="com.example.springboot2.yang.common.alipay.util.AlipaySubmit"%>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <!DOCTYPE html>
